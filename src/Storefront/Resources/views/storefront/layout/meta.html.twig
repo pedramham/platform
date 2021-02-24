@@ -4,7 +4,7 @@
     {% set metaDescription = metaInformation.metaDescription|striptags|trim|u.truncate(shopware.config.seo.descriptionMaxLength ?? 160, '…') %}
     {% set metaTitle = metaInformation.metaTitle|striptags|trim %}
     {% set metaKeywords = metaInformation.metaKeywords|striptags|trim %}
-
+{% block layout_head_tag %}
     <head>
         {% block layout_head_meta_tags %}
             {% block layout_head_meta_tags_charset %}
@@ -124,4 +124,5 @@
             {% sw_include "@Storefront/storefront/component/analytics.html.twig" %}
         {% endblock %}
     </head>
+  {% endblock %}
 {% endblock %}
